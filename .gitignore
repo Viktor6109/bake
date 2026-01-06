@@ -53,3 +53,13 @@ htmlcov/
 build/
 dist/
 *.egg-info/
+# ======================
+# Images (photos, icons)
+# ======================
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.webp
