@@ -1,0 +1,55 @@
+# ======================
+# Python
+# ======================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ======================
+# Virtual environments
+# ======================
+venv/
+.venv/
+env/
+.env/
+
+# ======================
+# Django
+# ======================
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# Django migrations cache
+**/migrations/__pycache__/
+
+# ======================
+# Logs
+# ======================
+*.log
+
+# ======================
+# VS Code
+# ======================
+.vscode/
+
+# ======================
+# OS files
+# ======================
+.DS_Store
+Thumbs.db
+
+# ======================
+# Tests / coverage
+# ======================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# ======================
+# Build / dist
+# ======================
+build/
+dist/
+*.egg-info/
