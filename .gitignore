@@ -63,3 +63,5 @@ dist/
 *.svg
 *.ico
 *.webp
+
+.idea/
