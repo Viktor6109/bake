@@ -116,12 +116,15 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
-
 STATICFILES_DIRS: list[Path] = [
     BASE_DIR / 'static',
+]
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+INTERNAL_IPS = [
+    "127.0.0.1",
 ]
 
 # Default primary key field type

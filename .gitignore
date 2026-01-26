@@ -1,67 +1,48 @@
-# ======================
-# Python
-# ======================
+# === Django ===
+*.log
+*.pot
+*.pyc
 __pycache__/
-*.py[cod]
-*$py.class
-
-# ======================
-# Virtual environments
-# ======================
-venv/
-.venv/
-env/
-.env/
-
-# ======================
-# Django
-# ======================
 db.sqlite3
-db.sqlite3-journal
 media/
 staticfiles/
 
-# Django migrations cache
-**/migrations/__pycache__/
+# === Environment ===
+.env
+.env.*
+venv/
+.venv/
 
-# ======================
-# Logs
-# ======================
-*.log
+# === Migrations cache ===
+**/__pycache__/
 
-# ======================
-# VS Code
-# ======================
-.vscode/
+# === PyCharm / IDE ===
+.idea/
+*.iml
 
-# ======================
-# OS files
-# ======================
+# === OS ===
 .DS_Store
 Thumbs.db
+Desktop.ini
 
-# ======================
-# Tests / coverage
-# ======================
+# === Python ===
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# === Tests / Coverage ===
 .coverage
 htmlcov/
-.pytest_cache/
 
-# ======================
-# Build / dist
-# ======================
-build/
-dist/
-*.egg-info/
-# ======================
-# Images (photos, icons)
-# ======================
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.svg
-*.ico
-*.webp
+# === Jupyter ===
+.ipynb_checkpoints/
 
-.idea/
+# === Node / Frontend (если будет) ===
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# === Django Debug Toolbar ===
+debug_toolbar/
