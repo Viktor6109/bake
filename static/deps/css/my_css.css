@@ -7,6 +7,16 @@ body {
     height: 100%;
 }
 
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    flex: 1;
+}
+
 .dropdown-toggle::after {
     content: none;
 }
