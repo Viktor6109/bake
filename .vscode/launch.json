@@ -5,12 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         
+        
         {
             "name": "Отладчик Python: Django",
             "type": "debugpy",
             "request": "launch",
             "args": [
-                "runserver"
+                "runserver",
+                "--noreload" // Рекомендую для отладки, чтобы избежать двойного запуска
             ],
             "django": true,
             "autoStartBrowser": false,

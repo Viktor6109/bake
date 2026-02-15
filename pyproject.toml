@@ -1,0 +1,6 @@
+[tool.ruff]
+line-length = 88
+target-version = "py313" # или ваша версия python
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "DJ"] # E/F - ошибки, I - импорты, DJ - специфичные правила для Django
