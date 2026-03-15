@@ -1,14 +1,16 @@
 from django.core.paginator import Paginator
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 
 from goods.models import Products
 
 
 def catalog(request, category_slug):
     if category_slug == "all":
-        goods = Products.objects.all().select_related('category')
+        goods = Products.objects.all().select_related("category")
     else:
-        goods = Products.objects.filter(category__slug=category_slug).select_related('category')
+        goods = Products.objects.filter(category__slug=category_slug).select_related(
+            "category"
+        )
 
     # Применяем фильтры и сортировку
     on_sale = request.GET.get("on_sale")
@@ -28,7 +30,6 @@ def catalog(request, category_slug):
     paginator = Paginator(goods, 3)
     current_page = paginator.get_page(page)
 
-   
     # Сохраняем остальные параметры для пагинации
     params = request.GET.copy()
     params.pop("page", None)

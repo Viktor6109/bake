@@ -1,5 +1,6 @@
 from decimal import Decimal
-from django.core.validators import MinValueValidator, MaxValueValidator
+
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
 
@@ -55,13 +56,18 @@ class Products(models.Model):
         db_table = "products"
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
-        ordering = ["category", "name"]
+        ordering = [
+            "category",
+            "name",
+        ]
 
     def __str__(self):
         return self.name
 
     def display_id(self):
-        return f"{self.id:05}"
+        if self.pk is not None:
+            return f"{self.pk:05}"
+        return "00000"
 
     def sell_price(self):
         if self.discount:

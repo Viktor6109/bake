@@ -1,3 +1,20 @@
 {
-    "python-envs.pythonProjects": []
+  // Указываем Ruff как основной форматировщик
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "always",
+      "source.organizeImports.ruff": "always"
+    }
+  },
+  // Настройка анализатора Pylance, чтобы он не ругался на магию Django (id, объекты и т.д.)
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportAttributeAccessIssue": "none"
+  },
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  // Привязка интерпретатора (укажите ваш путь, если он отличается)
+  "python.terminal.activateEnvironment": true
 }

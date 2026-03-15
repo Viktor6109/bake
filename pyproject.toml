@@ -1,6 +1,22 @@
 [tool.ruff]
+# Указываем версию Python
+target-version = "py312"
+# Длина строки (как в Black)
 line-length = 88
-target-version = "py313" # или ваша версия python
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "DJ"] # E/F - ошибки, I - импорты, DJ - специфичные правила для Django
+# Какие правила проверять (E, F - стандартные, I - сортировка импортов)
+select = ["E", "F", "I"]
+# Игнорируем специфические ошибки, если они мешают
+ignore = []
+
+[tool.ruff.lint.isort]
+# Настройка для правильной сортировки импортов Django
+section-order = ["future", "standard-library", "third-party", "django", "first-party", "local-folder"]
+
+[tool.ruff.lint.isort.sections]
+# Группируем все пакеты Django в отдельный блок
+"django" = ["django"]
+
+[tool.ruff.lint.pycodestyle]
+max-line-length = 88
