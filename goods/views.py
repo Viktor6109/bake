@@ -28,7 +28,22 @@ def catalog(request, category_slug):
     # Пагинация
     page = request.GET.get("page", 1)
     paginator = Paginator(goods, 3)
-    current_page = paginator.get_page(page)
+
+    # Безопасное преобразование page в число
+    try:
+        page_num = int(page)
+    except (ValueError, TypeError):
+        page_num = 1
+
+    if page_num < 1:
+        page_num = 1
+
+    current_page = paginator.get_page(page_num)
+
+    # Сериализуем GET-параметры, исключая page, чтобы сохранить фильтры при переходе
+    params = request.GET.copy()
+    params.pop("page", None)
+    params = params.urlencode()
 
     # Сохраняем остальные параметры для пагинации
     params = request.GET.copy()
